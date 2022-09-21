@@ -1,0 +1,42 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 27px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #dcedff;
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    color: steelblue;
+}
+
+textarea{
+    resize: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    display: flex;
+    width: 100%;
+}
+
+label{
+    margin-bottom: 5px;
+}
