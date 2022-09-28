@@ -13,18 +13,24 @@
         <a href="index.html">Main</a>
         <a href="contacts.html">Contacts</a>
     </nav>
+    <ul class="breadcrumb">
+        <li><a href="#">One</a></li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+        <li>Four</li>
+    </ul>
 </header>
 
 <main>
-    <h2>Contact Us</h2>
+    <h2 class="secondHeader">Contact Us</h2>
     <p>Gloria classis septentrionalis, tantum progredi! Perge Sabaudiam!</p>
     <img src="src/images/severniy-flot.jpg" alt="kot-severniy-flot">
 
     <div class="wrapper">
         <div class="wrapper-element">
-            <h4>Address</h4>
+            <h4 class="header4">Address</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-            <h4>Phone</h4>
+            <h4 class="header4">Phone</h4>
             <ul>
                 <li><a href="tel:+74352344555">+7 (435) 234 45-55</a></li>
                 <li><a href="tel:+78882354555">+7 (888) 235 45-55</a></li>
@@ -32,7 +38,7 @@
         </div>
 
         <div class="wrapper-element">
-            <h4>Online service</h4>
+            <h4 class="header4">Online service</h4>
             <ul>
                 <li><a href="https://google.com">google.com</a></li>
                 <li><a href="mailto:mail@gmail.com">mail@gmail.com</a></li>
@@ -44,22 +50,22 @@
             </p>
         </div>
         <div class="wrapper-element">
-            <form>
-                <h4>Send us message</h4>
-                <label>Full name<input type="text"></label>
+            <form class="contacts-form">
+                <h4 class="header4">Send us message</h4>
+                <label>Full name<input class="input" type="text"></label>
                 <br>
-                <label>Email<input type="email"></label>
+                <label>Email<input class="input" type="email"></label>
                 <br>
                 <label for="message">Message</label>
-                <textarea id="message"></textarea>
-                <input type="submit" value="Send">
+                <textarea class="input" id="message"></textarea>
+                <input class="button" type="submit" value="Send">
             </form>
         </div>
     </div>
 </main>
 
 <footer>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, quisquam.</p>
+    <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, quisquam.</p>
     <hr>
     <ul>
         <li>Lorem ipsum dolor sit amet.</li>
@@ -70,7 +76,7 @@
             <a href="mailto:mail@gmail.com">mail@gmail.com</a>
         </li>
     </ul>
-    <p>&copy; All rights reserved.</p>
+    <p class="paragraph">&copy; All rights reserved.</p>
 </footer>
 
 </body>
