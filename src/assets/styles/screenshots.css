@@ -1,0 +1,9 @@
+.screenshots{
+    position: absolute;
+    width: 1154px;
+    height: 1280px;
+    right: 0;
+    background-size: cover;
+    background: url(../img/screenshots.png) no-repeat;
+    z-index: -1;
+}

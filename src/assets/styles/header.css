@@ -1,7 +1,53 @@
 header{
     display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 16px 24px;
+    gap: 80px;
+    align-items: center;
+    max-width: fit-content;
+    margin: 24px 108px;
+    position: fixed;
+    top: 0;
 }
 
-header ul{
+header a{
+    text-decoration: none;
+}
+
+header h2{
+    color: #2D66EE;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 20px;
+}
+
+header div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
 }
+
+header .menu{
+    gap: 24px;
+}
+
+header .contacts{
+    gap: 16px;
+}
+
+header .email{
+    gap: 10px;
+}
+
+header .menu a{
+    color: black;
+}
+
+header .contacts a, .email a{
+    color: #2D66EE;
+}
+
