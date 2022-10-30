@@ -1,21 +1,17 @@
-.welcome-wrapper{
+.welcome{
     margin: 160px 108px;
     max-width: 600px;
 }
 
-.welcome-wrapper__title{
+.welcome__title{
     margin-bottom: 24px;
 }
 
-.welcome-wrapper__title-blue{
-    color: #2D66EE;
-}
-
-.welcome-wrapper__text{
+.welcome__text{
     margin-bottom: 64px;
 }
 
-.welcome-wrapper__form{
+.welcome__form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,35 +27,35 @@
     border-radius: 12px;
 }
 
-.welcome-wrapper__form form{
+.welcome__form form{
     display: flex;
     flex-direction: row;
     gap: 24px;
     align-items: end;
 }
 
-.welcome-wrapper__form input[type="submit"]{
+.welcome__form input[type="submit"]{
     white-space: normal;
     text-align: left;
 }
 
-.welcome-wrapper__form__input-box__input{
+.welcome__form__input-box__input{
     border: none;
     border-bottom: 1px solid #D0D5DD;
     background-color: transparent;
     outline: none;
 }
 
-.welcome-wrapper__form__input-box{
+.welcome__form__input-box{
     display: flex;
     flex-direction: column;
 }
 
-.welcome-wrapper__form__input-box label{
+.welcome__form__input-box label{
     color: #667085;
 }
 
-.welcome-wrapper__form__button{
+.welcome__form__button{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -72,6 +68,6 @@
     border-radius: 8px;
 }
 
-.welcome-wrapper__form__button:hover{
+.welcome__form__button:hover{
     cursor: pointer;
 }

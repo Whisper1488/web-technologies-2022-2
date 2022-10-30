@@ -11,67 +11,62 @@
 <body>
 
 <header>
-    <a href="/"><h2>IT WEBSITE</h2></a>
-    <div class="subhead-medium menu">
-        <a href="#">Services</a>
-        <a href="#">Media</a>
-        <a href="#">Cases</a>
-        <a href="#">FAQ</a>
-        <a href="#">Contacts</a>
+    <a href="/">
+        <h2>IT WEBSITE</h2>
+    </a>
+    <div class="subhead-medium header__menu--items">
+        <a class="header__menu--item" href="#">Services</a>
+        <a class="header__menu--item" href="#">Media</a>
+        <a class="header__menu--item" href="#">Cases</a>
+        <a class="header__menu--item" href="#">FAQ</a>
+        <a class="header__menu--item" href="#">Contacts</a>
     </div>
-
-    <div class="subhead-medium contacts">
+    <div class="subhead-medium header__contacts">
         <svg fill="#2D66EE" width="14px" height="20px">
             <use href="./src/sprites.svg#phone"/>
         </svg>
         <a href="tel:+71111111111">+7 (111) 111 11 11</a>
         <a href="tel:+71111111111">+7 (111) 111 11 11</a>
     </div>
-
-    <div class="subhead-medium email">
+    <div class="subhead-medium header__email">
         <svg fill="#2D66EE" width="20px" height="16px">
             <use href="./src/sprites.svg#email"/>
         </svg>
         <a class="mail" href="mailto:itcompany@mail.com">itcompany@mail.com</a>
     </div>
 </header>
-
 <div class="screenshots"></div>
-
-<div class="welcome-wrapper">
-    <div class="welcome-wrapper__title">
-        <h1 class="title-1-bold">Development of <span class="welcome-wrapper__title-blue">mobile applications</span> and
-            <span class="welcome-wrapper__text-blue">web services</span> of any complexity</h1>
+<div class="welcome">
+    <div class="welcome__title">
+        <h1 class="title-1-bold">Development of <span class="welcome__title blue-text">mobile applications</span> and
+            <span class="welcome__text blue-text">web services</span> of any complexity</h1>
     </div>
-
-    <div class="welcome-wrapper__text">
+    <div class="welcome__text">
         <p class="text-medium">We create mobile applications for iOS, Android that transfer your business to mobile applications of your
             customers' devices</p>
     </div>
-
-    <div class="welcome-wrapper__form">
+    <div class="welcome__form">
         <h4 class="subtitle-2-bold-Inter">Leave your contacts and we will call you back <br>
             within 30 minutes</h4>
         <form action="">
-            <div class="welcome-wrapper__form__input-box">
+            <div class="welcome__form__input-box">
                 <label class="caption-1-medium" for="welcome-form-tel">Phone number</label>
-                <input class="title-3-regular welcome-wrapper__form__input-box__input" type="tel" id="welcome-form-tel">
+                <input class="title-3-regular welcome__form__input-box__input" type="tel" id="welcome-form-tel">
             </div>
-            <div class="welcome-wrapper__form__input-box">
+            <div class="welcome__form__input-box">
                 <label class="caption-1-medium" for="welcome-form-name">Full name</label>
-                <input class="title-3-regular welcome-wrapper__form__input-box__input" type="text" id="welcome-form-name">
+                <input class="title-3-regular welcome__form__input-box__input" type="text" id="welcome-form-name">
             </div>
-            <input class="subhead-semibold welcome-wrapper__form__button" type="submit" value="Get consultation">
+            <input class="subhead-semibold welcome__form__button" type="submit" value="Get consultation">
         </form>
     </div>
 </div>
 
 <footer>
     <h1>IT WEBSITE</h1>
-    <div class="footer-list">
-
-        <div class="footer-list__element">
-            <div class="footer-list__element__label">
+    <div class="footer__list--elements">
+        <div class="footer__list--element">
+            <div class="footer__list--element--label">
                 <svg fill="#98A2B3" width="14" height="20">
                     <use href="./src/sprites.svg#phone"/>
                 </svg>
@@ -79,9 +74,8 @@
             </div>
             <a class="sf-title-3-semibold" href="tel:+77783959026">+7 (778) 395 90 26</a>
         </div>
-
-        <div class="footer-list__element">
-            <div class="footer-list__element__label">
+        <div class="footer__list--element">
+            <div class="footer__list--element--label">
                 <svg fill="#98A2B3" width="20" height="16">
                     <use href="./src/sprites.svg#email"/>
                 </svg>
@@ -89,9 +83,8 @@
             </div>
             <a class="sf-title-3-semibold" href="mailto:mail@mail.com">mail@mail.com</a>
         </div>
-
-        <div class="footer-list__element">
-            <div class="footer-list__element__label">
+        <div class="footer__list--element">
+            <div class="footer__list--element--label">
                 <svg fill="#98A2B3" width="15.5" height="20">
                     <use href="./src/sprites.svg#map-mark"/>
                 </svg>
@@ -100,9 +93,8 @@
             <a class="sf-title-3-semibold" href="https://2gis.ru/tyumen/firm/70000001027202230/65.522943%2C57.159183?m=65.526144%2C57.159937%2F16.66">City
                 city, street st. 90</a>
         </div>
-
-        <div class="footer-list__element">
-            <div class="footer-list__element__label">
+        <div class="footer__list--element">
+            <div class="footer__list--element--label">
                 <svg fill="#98A2B3" width="17" height="20">
                     <use href="./src/sprites.svg#file"/>
                 </svg>
@@ -110,18 +102,14 @@
             </div>
             <a class="sf-title-3-semibold" href="#">Leave a request</a>
         </div>
-
     </div>
-
-    <div class="footer-list__epilogue">
+    <div class="footer__list--epilogue">
         <svg fill="#FFFFFF" width="30px" height="16px">
             <use href="./src/sprites.svg#kazakhstan"/>
         </svg>
         <p class="caption-1-regular">We work throughout world</p>
     </div>
-
 </footer>
-
 
 </body>
 </html>

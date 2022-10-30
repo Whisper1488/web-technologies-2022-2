@@ -13,7 +13,7 @@ header{
     top: 0;
 }
 
-header a{
+header__menu--item{
     text-decoration: none;
 }
 
@@ -31,23 +31,23 @@ header div{
 
 }
 
-header .menu{
+.header__menu--items{
     gap: 24px;
 }
 
-header .contacts{
+.header__contacts{
     gap: 16px;
 }
 
-header .email{
+.header__email{
     gap: 10px;
 }
 
-header .menu a{
+.header__menu--items a{
     color: black;
 }
 
-header .contacts a, .email a{
+.header__contacts a, .header__email a{
     color: #2D66EE;
 }
 
