@@ -10,10 +10,48 @@
 </head>
 <body>
 
+<div class="mobile__menu inactive" id="mobile__menu">
+    <svg class="mobile__menu--cross" id="mobile__menu--cross" width="24" height="24" fill="#98A2B3">
+        <use href="./src/sprites.svg#cross"/>
+    </svg>
+    <a href="/">
+        <h1>IT WEBSITE</h1>
+    </a>
+    <div class="mobile__menu--items">
+        <a class="mobile__menu--item" href="#">Services</a>
+        <a class="mobile__menu--item" href="#">Media</a>
+        <a class="mobile__menu--item" href="#">Cases</a>
+        <a class="mobile__menu--item" href="#">FAQ</a>
+        <a class="mobile__menu--item" href="#">Contacts</a>
+    </div>
+    <div class="mobile__menu--contacts--list">
+        <div class="mobile__menu--contacts--item">
+            <svg fill="#2D66EE" width="14px" height="20px">
+                <use href="./src/sprites.svg#phone"/>
+            </svg>
+            <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+        </div>
+        <div class="mobile__menu--contacts--item">
+            <svg fill="#2D66EE" width="14px" height="20px">
+                <use href="./src/sprites.svg#phone"/>
+            </svg>
+            <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+        </div>
+        <div class="mobile__menu--contacts--item">
+            <svg fill="#2D66EE" width="20px" height="16px">
+                <use href="./src/sprites.svg#email"/>
+            </svg>
+            <a class="mail" href="mailto:itcompany@mail.com">itcompany@mail.com</a>
+        </div>
+    </div>
+</div>
+
 <div class="container sticky__header">
     <div class="header">
-        <div class="header__burger__menu">
-            <span></span>
+        <div class="header__burger--wrapper">
+            <div class="header__burger" id="header__burger">
+                <span></span>
+            </div>
         </div>
         <a href="/">
             <h2>IT WEBSITE</h2>
@@ -55,7 +93,8 @@
     </div>
     <div class="welcome">
         <div class="welcome__title">
-            <h1 class="title-1-bold">Development of <span class="welcome__title blue-text">mobile applications</span> and
+            <h1 class="title-1-bold">Development of <span class="welcome__title blue-text">mobile applications</span>
+                and
                 <span class="welcome__text blue-text">web services</span> of any complexity</h1>
         </div>
         <div class="welcome__text">
@@ -190,6 +229,6 @@
         <p class="caption-1-regular">We work throughout world</p>
     </div>
 </footer>
-
+<script src="./src/assets/js/script.js"></script>
 </body>
 </html>
