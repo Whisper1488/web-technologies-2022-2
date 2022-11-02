@@ -1,5 +1,5 @@
 .title-1-bold{
-    font-family: 'Inter';
+    font-family: 'Inter', serif;
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
@@ -8,7 +8,7 @@
 }
 
 .subhead-medium{
-    font-family: 'SF Pro Text';
+    font-family: 'SF Pro Text', serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -17,7 +17,7 @@
 }
 
 .text-medium{
-    font-family: 'SF Pro Text';
+    font-family: 'SF Pro Text', serif;
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
@@ -26,7 +26,7 @@
 }
 
 .subtitle-2-bold-Inter{
-    font-family: 'Inter';
+    font-family: 'Inter', serif;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -35,7 +35,7 @@
 }
 
 .caption-1-medium{
-    font-family: 'SF Pro Text';
+    font-family: 'SF Pro Text', serif;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -44,7 +44,7 @@
 }
 
 .subhead-semibold{
-    font-family: 'SF Pro Text';
+    font-family: 'SF Pro Text', serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -55,7 +55,7 @@
 }
 
 .title-3-regular{
-    font-family: 'SF Pro Text';
+    font-family: 'SF Pro Text', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
@@ -64,7 +64,7 @@
 }
 
 .caption-1-regular{
-    font-family: 'SF Pro Text';
+    font-family: 'SF Pro Text', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -73,11 +73,20 @@
 }
 
 .sf-title-3-semibold{
-    font-family: 'SF Pro Text';
+    font-family: 'SF Pro Text', serif;
     font-style: normal;
     font-weight: 300;
     font-size: 17px;
     line-height: 22px;
+}
+
+.sf-title-2-semibold{
+    font-family: 'SF Pro Text', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
 }
 
 .blue-text{

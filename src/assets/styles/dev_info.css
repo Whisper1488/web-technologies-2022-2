@@ -1,0 +1,10 @@
+.dev__info{
+    display: flex;
+    flex-direction: row;
+    background: white;
+}
+
+.dev__info--technologies, .dev__info--services{
+    display: flex;
+    flex-direction: column;
+}

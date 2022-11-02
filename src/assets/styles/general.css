@@ -4,3 +4,7 @@ body{
     flex-direction: column;
     overflow-x: hidden;
 }
+
+a{
+    text-decoration: none;
+}
