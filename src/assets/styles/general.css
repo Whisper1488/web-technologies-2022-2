@@ -3,8 +3,14 @@ body{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    position: relative;
 }
 
 a{
     text-decoration: none;
+}
+
+.container{
+    padding-left: 108px;
+    padding-right: 108px;
 }

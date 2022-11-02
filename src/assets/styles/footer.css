@@ -7,12 +7,10 @@ footer{
     background: #101828;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 0 2px 24px rgba(0, 0, 0, 0.08);
     border-radius: 12px;
-    margin: 48px 108px;
+    margin: 0 108px;
     color: #FFFFFF;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 87%;
+    position: sticky;
+    bottom: 10px;
 }
 
 footer h1{
@@ -23,16 +21,20 @@ footer h1{
     line-height: 18px;
 }
 
-.footer__list--elements, .footer-list__epilogue{
+.footer__list--elements, .footer__list--epilogue{
     display: flex;
     flex-direction: row;
+}
+
+.footer__list--elements{
+    width: 100%;
+    justify-content: space-between;
 }
 
 .footer__list--element{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 0 75px;
 }
 
 .footer__list--element a{

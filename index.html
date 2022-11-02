@@ -10,96 +10,138 @@
 </head>
 <body>
 
-<header>
-    <a href="/">
-        <h2>IT WEBSITE</h2>
-    </a>
-    <div class="subhead-medium header__menu--items">
-        <a class="header__menu--item" href="#">Services</a>
-        <a class="header__menu--item" href="#">Media</a>
-        <a class="header__menu--item" href="#">Cases</a>
-        <a class="header__menu--item" href="#">FAQ</a>
-        <a class="header__menu--item" href="#">Contacts</a>
-    </div>
-    <div class="subhead-medium header__contacts">
-        <svg fill="#2D66EE" width="14px" height="20px">
-            <use href="./src/sprites.svg#phone"/>
-        </svg>
-        <a href="tel:+71111111111">+7 (111) 111 11 11</a>
-        <a href="tel:+71111111111">+7 (111) 111 11 11</a>
-    </div>
-    <div class="subhead-medium header__email">
-        <svg fill="#2D66EE" width="20px" height="16px">
-            <use href="./src/sprites.svg#email"/>
-        </svg>
-        <a class="mail" href="mailto:itcompany@mail.com">itcompany@mail.com</a>
-    </div>
-</header>
-<div class="screenshots--groups">
-    <div class="screenshots--group--items">
-        <div class="screenshots--item screenshot__1"></div>
-        <div class="screenshots--item screenshot__2"></div>
-        <div class="screenshots--item screenshot__3"></div>
-    </div>
-    <div class="screenshots--group--items">
-        <div class="screenshots--item screenshot__4"></div>
-        <div class="screenshots--item screenshot__5"></div>
-        <div class="screenshots--item screenshot__6"></div>
+<div class="container sticky__header">
+    <div class="header">
+        <div class="header__burger__menu">
+            <span></span>
+        </div>
+        <a href="/">
+            <h2>IT WEBSITE</h2>
+        </a>
+        <div class="subhead-medium header__menu--items">
+            <a class="header__menu--item" href="#">Services</a>
+            <a class="header__menu--item" href="#">Media</a>
+            <a class="header__menu--item" href="#">Cases</a>
+            <a class="header__menu--item" href="#">FAQ</a>
+            <a class="header__menu--item" href="#">Contacts</a>
+        </div>
+        <div class="subhead-medium header__contacts">
+            <svg fill="#2D66EE" width="14px" height="20px">
+                <use href="./src/sprites.svg#phone"/>
+            </svg>
+            <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+            <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+        </div>
+        <div class="subhead-medium header__email">
+            <svg fill="#2D66EE" width="20px" height="16px">
+                <use href="./src/sprites.svg#email"/>
+            </svg>
+            <a class="mail" href="mailto:itcompany@mail.com">itcompany@mail.com</a>
+        </div>
     </div>
 </div>
-<div class="welcome">
-    <div class="welcome__title">
-        <h1 class="title-1-bold">Development of <span class="welcome__title blue-text">mobile applications</span> and
-            <span class="welcome__text blue-text">web services</span> of any complexity</h1>
+<div class="container">
+    <div class="screenshots--groups">
+        <div class="screenshots--group--items">
+            <div class="screenshots--item screenshot__1"></div>
+            <div class="screenshots--item screenshot__2"></div>
+            <div class="screenshots--item screenshot__3"></div>
+        </div>
+        <div class="screenshots--group--items">
+            <div class="screenshots--item screenshot__4"></div>
+            <div class="screenshots--item screenshot__5"></div>
+            <div class="screenshots--item screenshot__6"></div>
+        </div>
     </div>
-    <div class="welcome__text">
-        <p class="text-medium">We create mobile applications for iOS, Android that transfer your business to mobile
-            applications of your
-            customers' devices</p>
-    </div>
-    <div class="welcome__form">
-        <h4 class="subtitle-2-bold-Inter">Leave your contacts and we will call you back <br>
-            within 30 minutes</h4>
-        <form action="">
-            <div class="welcome__form__input-box">
-                <label class="caption-1-medium" for="welcome-form-tel">Phone number</label>
-                <input class="title-3-regular welcome__form__input-box__input" type="tel" id="welcome-form-tel">
-            </div>
-            <div class="welcome__form__input-box">
-                <label class="caption-1-medium" for="welcome-form-name">Full name</label>
-                <input class="title-3-regular welcome__form__input-box__input" type="text" id="welcome-form-name">
-            </div>
-            <input class="subhead-semibold welcome__form__button" type="submit" value="Get consultation">
-        </form>
+    <div class="welcome">
+        <div class="welcome__title">
+            <h1 class="title-1-bold">Development of <span class="welcome__title blue-text">mobile applications</span> and
+                <span class="welcome__text blue-text">web services</span> of any complexity</h1>
+        </div>
+        <div class="welcome__text">
+            <p class="text-medium">We create mobile applications for iOS, Android that transfer your business to mobile
+                applications of your
+                customers' devices</p>
+        </div>
+        <div class="welcome__form">
+            <h4 class="subtitle-2-bold-Inter">Leave your contacts and we will call you back <br>
+                within 30 minutes</h4>
+            <form action="">
+                <div class="welcome__form__input-box">
+                    <label class="caption-1-medium" for="welcome-form-tel">Phone number</label>
+                    <input class="title-3-regular welcome__form__input-box__input" type="tel" id="welcome-form-tel">
+                </div>
+                <div class="welcome__form__input-box">
+                    <label class="caption-1-medium" for="welcome-form-name">Full name</label>
+                    <input class="title-3-regular welcome__form__input-box__input" type="text" id="welcome-form-name">
+                </div>
+                <input class="subhead-semibold welcome__form__button" type="submit" value="Get consultation">
+            </form>
+        </div>
     </div>
 </div>
 <div class="dev__info">
-    <div class="dev__info--technologies">
+    <div class="dev__info--technologies--options">
         <h2 class="title-1-bold">Full development cycle</h2>
         <p class="text-medium">We use proven technologies</p>
-        <div class="dev__info--technologies--web">
+        <div class="dev__info--technologies--option">
             <h4 class="sf-title-2-semibold">Web</h4>
             <p class="title-3-regular">PHP / Javascript / Node.JS / Web Socket / Socket.io / Vue.js/ Nuxt / MySQL /
                 Laravel / GO lang / django / Python</p>
         </div>
-        <div class="dev__info--technologies__mobile">
+        <div class="dev__info--technologies--option">
             <h4 class="sf-title-2-semibold">Mobile</h4>
             <p class="title-3-regular">Swift / Kotlin / Alamofire / Firebase / CoreData / Room / Realm / Coroutine /
                 RxJava / RxSwift / Unit Test / Navigation</p>
         </div>
     </div>
     <div class="dev__info--services">
-        <a href="#">iOS development</a>
-        <a href="#">Android development</a>
-        <a href="#">Web development</a>
-        <a href="#">UI/UX design</a>
-        <a href="#">Testing</a>
-        <a href="#">Launch</a>
-        <a href="#">IT consulting</a>
+        <a class="sf-title-2-regular" href="#">
+            <span>iOS development</span>
+            <svg fill="#2D66EE" width="7" height="12">
+                <use href="./src/sprites.svg#chevron"/>
+            </svg>
+        </a>
+        <a class="sf-title-2-regular" href="#">
+            <span> Android development </span>
+            <svg fill="#2D66EE" width="7" height="12">
+                <use href="./src/sprites.svg#chevron"/>
+            </svg>
+        </a>
+        <a class="sf-title-2-regular" href="#">
+            <span> Web development </span>
+            <svg fill="#2D66EE" width="7" height="12">
+                <use href="./src/sprites.svg#chevron"/>
+            </svg>
+        </a>
+        <a class="sf-title-2-regular" href="#">
+            <span> UI/UX design </span>
+            <svg fill="#2D66EE" width="7" height="12">
+                <use href="./src/sprites.svg#chevron"/>
+            </svg>
+        </a>
+        <a class="sf-title-2-regular" href="#">
+            <span> Testing </span>
+            <svg fill="#2D66EE" width="7" height="12">
+                <use href="./src/sprites.svg#chevron"/>
+            </svg>
+        </a>
+        <a class="sf-title-2-regular" href="#">
+            <span> Launch </span>
+            <svg fill="#2D66EE" width="7" height="12">
+                <use href="./src/sprites.svg#chevron"/>
+            </svg>
+        </a>
+        <a class="sf-title-2-regular" href="#">
+            <span> IT consulting </span>
+            <svg fill="#2D66EE" width="7" height="12">
+                <use href="./src/sprites.svg#chevron"/>
+            </svg>
+        </a>
     </div>
 </div>
 
-<footer>
+<footer class="container">
     <h1>IT WEBSITE</h1>
     <div class="footer__list--elements">
         <div class="footer__list--element">

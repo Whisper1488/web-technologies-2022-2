@@ -1,0 +1,115 @@
+@media (max-width: 768px){
+
+    .container{
+       padding-left: 16px;
+       padding-right: 16px;
+    }
+
+    .header{
+        margin: 7px 0;
+        padding: 25px 32px;
+        max-width: unset;
+        width: unset;
+        top: 7px;
+    }
+
+    .header > a{
+        flex: 1;
+        text-align: center;
+    }
+
+    .header__burger__menu,
+    .header__email{
+        flex: 0 0 33%;
+    }
+
+    .header__email{
+        justify-content: flex-end;
+    }
+
+    .header__burger__menu{
+        display: block;
+    }
+
+    .header__menu--items, .header__contacts{
+        display: none;
+    }
+
+    .screenshots--groups{
+        top: -60px;
+    }
+
+    .screenshots--item{
+        width: 138px;
+        height: 298px;
+        margin: 10px;
+    }
+
+    .welcome{
+        max-width: 383px;
+        margin: 32px 0;
+    }
+
+    .welcome__text{
+        margin-bottom: 32px;
+    }
+
+    .welcome__form{
+        width: unset;
+        justify-content: left;
+    }
+
+    .welcome__form form{
+        flex-direction: column;
+    }
+
+    .welcome__form__button{
+        width: unset;
+        align-self: flex-start;
+    }
+
+    .title-1-bold{
+        font-size: 28px;
+    }
+
+    .subtitle-2-bold-Inter{
+        font-size: 16px;
+    }
+
+    .title-3-regular{
+        font-size: 14px;
+    }
+
+    .dev__info{
+        padding: 32px 40px;
+        gap: 82px;
+        align-items: unset;
+    }
+
+    .dev__info--services,
+    .dev__info--technologies--options{
+        flex: 0 0 50%;
+    }
+
+    .dev__info--technologies--options{
+        max-width: unset;
+    }
+
+    .dev__info--technologies--option{
+        max-width: 277px;
+    }
+
+    .dev__info--services{
+        padding-top: 128px;
+    }
+
+    footer{
+        bottom: 0;
+        margin: 0 8px;
+        gap: 36px;
+    }
+
+    .sf-title-3-semibold{
+        font-size: 14px;
+    }
+}

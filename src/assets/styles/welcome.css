@@ -1,5 +1,5 @@
 .welcome{
-    margin: 160px 108px;
+    margin: 80px 0;
     max-width: 600px;
 }
 
@@ -18,11 +18,8 @@
     align-items: flex-start;
     padding: 24px;
     gap: 32px;
-
     width: fit-content;
-
     background: #FFFFFF;
-
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 0 0 24px rgba(0, 0, 0, 0.16);
     border-radius: 12px;
 }
