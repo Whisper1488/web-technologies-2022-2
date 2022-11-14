@@ -1,0 +1,49 @@
+@import "typography-mixin";
+
+.title-1-bold{
+  @include typography($font: $font-inter, $fw: 700, $fs: 36px, $lh: 52px);
+}
+
+.subhead-medium{
+  @include typography($fs: 14px, $lh: 18px);
+}
+
+.text-medium{
+  @include typography($fs: 15px, $lh: 20px);
+}
+
+.subtitle-2-bold-Inter{
+  @include typography($font: $font-inter, $fs: 20px, $lh: 24px);
+}
+
+.caption-1-medium{
+  @include typography($fs: 13px, $lh: 16px);
+}
+
+.subhead-semibold{
+  @include typography($fw: 600, $fs: 14px, $lh: 18px, $color: white);
+}
+
+.title-3-regular{
+  @include typography($fw: 400, $fs: 17px, $lh: 22px);
+}
+
+.caption-1-regular{
+  @include typography($fw: 400, $fs: 13px, $lh: 16px);
+}
+
+.sf-title-3-semibold{
+  @include typography($fw: 300, $fs: 17px, $lh: 22px);
+}
+
+.sf-title-2-semibold{
+  @include typography($fw: 600, $fs: 20px, $lh: 24px);
+}
+
+.sf-title-2-regular{
+  @include typography($fw: 400, $fs: 20px, $lh: 24px);
+}
+
+.blue-text{
+  color: #2D66EE;
+}

@@ -1,0 +1,43 @@
+%flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.dev__info{
+  display: flex;
+  flex-direction: row;
+  background: white;
+  padding: 80px 108px;
+  gap: 232px;
+  align-items: center;
+
+  &--technologies--options{
+    @extend %flex-column;
+    gap: 32px;
+    max-width: 600px;
+
+    &--option{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 496px;
+    }
+  }
+
+  &--services{
+    @extend %flex-column;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    a{
+      display: flex;
+      gap: 21px;
+      align-items: center;
+
+      &:hover{
+        text-decoration: underline #2D66EE;
+      }
+    }
+  }
+}

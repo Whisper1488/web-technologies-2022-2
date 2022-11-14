@@ -1,0 +1,11 @@
+$font-sf: 'SF Pro Text', serif;
+$font-inter: 'Inter', serif;
+
+@mixin typography($font: $font-sf, $fw: 500, $fs: 17px, $lh: 18px, $color: black){
+  font-family: $font;
+  font-style: normal;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+}

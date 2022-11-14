@@ -1,0 +1,58 @@
+@import "typography-mixin";
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 40px;
+  background: #101828;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 0 2px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  color: white;
+  margin: 10px 108px;
+
+  h1{
+    @include typography($font: $font-inter, $fw: 700, $fs: 36px, $lh: 18px, $color: white);
+  }
+}
+
+%footer-components{
+  display: flex;
+}
+
+.footer__list--elements{
+  @extend %footer-components;
+  width: 100%;
+  justify-content: space-between;
+
+  &--element{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    a{
+      text-decoration: none;
+      color: white;
+    }
+
+    &--label{
+      display: flex;
+      flex-direction: row;
+      gap: 13px;
+      align-items: center;
+
+      p{
+        color: #98A2B3;
+      }
+    }
+  }
+}
+
+.footer__list--epilogue{
+  @extend %footer-components;
+  gap: 12px;
+
+  p{
+    color: white;
+  }
+}

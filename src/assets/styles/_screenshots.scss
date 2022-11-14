@@ -1,51 +1,53 @@
 .screenshots--groups{
-    position: absolute;
-    right: 0;
-    top: -600px;
-    display: flex;
-    flex-direction: row;
-    z-index: -1;
-    transform: rotate(-12deg);
-}
+  position: absolute;
+  right: 0;
+  top: -600px;
+  display: flex;
+  flex-direction: row;
+  z-index: -1;
+  transform: rotate(-12deg);
 
-.screenshots--group--items{
+  &--items{
     display: flex;
     flex-direction: column;
+
+    &--item{
+      position: relative;
+      width: 292px;
+      height: 633px;
+      margin: 15px;
+    }
+  }
 }
 
-.screenshots--item{
-    position: relative;
-    width: 292px;
-    height: 633px;
-    margin: 15px;
-}
-
-.screenshot__1{
+.screenshot{
+  &__1{
     background: url("../img/screenshot1.png") no-repeat center;
     background-size: cover;
-}
+  }
 
-.screenshot__2{
+  &__2{
     background: url("../img/screenshot2.png") no-repeat center;
     background-size: cover;
-}
+  }
 
-.screenshot__3{
+  &__3{
     background: url("../img/screenshot3.png") no-repeat center;
     background-size: cover;
-}
+  }
 
-.screenshot__4{
+  &__4{
     background: url("../img/screenshot4.png") no-repeat center;
     background-size: cover;
-}
+  }
 
-.screenshot__5{
+  &__5{
     background: url("../img/screenshot5.png") no-repeat center;
     background-size: cover;
-}
+  }
 
-.screenshot__6{
+  &__6{
     background: url("../img/screenshot6.png") no-repeat center;
     background-size: cover;
+  }
 }

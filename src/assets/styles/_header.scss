@@ -1,0 +1,166 @@
+$link-color: #2D66EE;
+@import "typography-mixin";
+
+.header{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 16px 24px;
+  align-items: center;
+  margin: 24px 0;
+  justify-content: space-between;
+  max-width: 1124px;
+  width: 100%;
+
+  h2{
+    color: #2D66EE;
+    font-family: 'Inter', serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
+
+.sticky__header{
+  position: sticky;
+  top: 0;
+}
+
+%header-components {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header__menu--items{
+  @extend %header-components;
+  gap: 24px;
+
+  a{
+    color: black;
+  }
+}
+
+.header__contacts{
+  @extend %header-components;
+  gap: 16px;
+
+  a{
+    color: $link-color;
+  }
+}
+
+.header__email{
+  @extend %header-components;
+  gap: 10px;
+
+  a{
+    color: $link-color;
+  }
+}
+
+/*BURGER MENU*/
+
+%burger-lines{
+  content: '';
+  background: #2D66EE;
+  position: absolute;
+  height: 8px;
+  left: 0;
+  width: 59px;
+}
+
+.header__burger{
+  max-width: 59px;
+  max-height: 42px;
+  display: none;
+  position: relative;
+  height: 42px;
+
+  &:before{
+    @extend %burger-lines;
+    top: 0;
+  }
+
+  &:after{
+    @extend %burger-lines;
+    bottom: 0;
+  }
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  span{
+    @extend %burger-lines;
+    top: 17px;
+  }
+}
+
+.mobile__menu{
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  max-height: 100%;
+  background: white;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 50;
+  padding: 75px 90px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  h1{
+    @include typography($font: $font-inter, $fw: 700, $fs: 48px, $lh: 48px, $color: #2D66EE);
+    margin-bottom: 50px;
+  }
+
+  &.active{
+    top: 0;
+    transition: all 0.5s ease;
+  }
+
+  &.inactive{
+    top: -100%;
+    transition: all 0.5s ease;
+  }
+}
+
+.mobile__menu--items{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 50px;
+
+  &--item{
+    @include typography($font: $font-inter, $fw: 400, $fs: 36px, $lh: 52px);
+  }
+}
+
+.mobile__menu--contacts--list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  &--item{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    a{
+      @include typography($font: $font-inter, $fw: 500, $fs: 18px, $lh: 18px, $color: #2D66EE);
+    }
+  }
+}
+
+.mobile__menu--cross{
+  align-self: end;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
