@@ -6,6 +6,7 @@
     flex-direction: row;
     z-index: -1;
     transform: rotate(-12deg);
+
 }
 
 .screenshots--group--items{
@@ -31,8 +32,9 @@
 }
 
 .screenshot__3{
-    background: url("../img/screenshot3.png") no-repeat center;
+    background: url("../img/screenshot3.png") no-repeat;
     background-size: cover;
+    height: 100px;
 }
 
 .screenshot__4{
@@ -46,6 +48,7 @@
 }
 
 .screenshot__6{
-    background: url("../img/screenshot6.png") no-repeat center;
+    background: url("../img/screenshot6.png") no-repeat;
     background-size: cover;
+    height: 220px;
 }
