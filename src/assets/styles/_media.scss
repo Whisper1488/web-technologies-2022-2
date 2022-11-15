@@ -1,3 +1,5 @@
+@import "mixins";
+
 @media (max-width: 768px){
 
   /*GENERAL*/
@@ -52,6 +54,55 @@
       height: 298px;
       margin: 10px;
       border-radius: 24px;
+    }
+  }
+
+  @mixin animation-template-3($direction: 1, $back-url: $background-url-3, $offset: 0){
+    0% {
+      transform: translate(0, 0);
+    }
+    73% {
+      @include screenshot($back-url);
+      transform: translate(0, $direction * (-1457px - $offset));
+    }
+    74% {
+      background: none;
+      transform: translate(0, $direction * (-1457px - $offset));
+    }
+    100% {
+      transform: translate(0, 0);
+      @include screenshot($back-url);
+    }
+  }
+
+  @keyframes screenshots-animation-1 {
+    @include animation-template-1($offset: 800px);
+  }
+
+  @keyframes screenshots-animation-2 {
+    @include animation-template-2($offset: 800px);
+  }
+
+  @keyframes screenshots-animation-3 {
+    @include animation-template-3($offset: 800px);
+  }
+
+  @keyframes screenshots-animation-4 {
+    @include animation-template-3(-1, $background-url-4, 800px);
+  }
+
+  @keyframes screenshots-animation-5 {
+    @include animation-template-2(-1, $background-url-5, 800px);
+  }
+
+  @keyframes screenshots-animation-6 {
+    @include animation-template-1(-1, $background-url-6, 800px);
+  }
+
+  .screenshot{
+    &__1, &__2, &__3, &__4, &__5, &__6{
+      animation-duration: 7s;
+      animation-timing-function: ease-in-out;
     }
   }
 
@@ -211,6 +262,54 @@
       height: 271px;
       margin: 10px;
       border-radius: 24px;
+    }
+  }
+
+  @mixin animation-template-3($direction: 1, $back-url: $background-url-3, $offset: 0){
+    0% {
+      transform: translate(0, 0);
+    }
+    73% {
+      @include screenshot($back-url);
+      transform: translate(0, $direction * (-1457px - $offset));
+    }
+    74% {
+      background: none;
+      transform: translate(0, $direction * (-1457px - $offset));
+    }
+    100% {
+      transform: translate(0, 0);
+      @include screenshot($back-url);
+    }
+  }
+
+  @keyframes screenshots-animation-1 {
+    @include animation-template-1($offset: 800px);
+  }
+
+  @keyframes screenshots-animation-2 {
+    @include animation-template-2($offset: 800px);
+  }
+
+  @keyframes screenshots-animation-3 {
+    @include animation-template-3($offset: 800px);
+  }
+
+  @keyframes screenshots-animation-4 {
+    @include animation-template-3(-1, $background-url-4, 800px);
+  }
+
+  @keyframes screenshots-animation-5 {
+    @include animation-template-2(-1, $background-url-5, 800px);
+  }
+
+  @keyframes screenshots-animation-6 {
+    @include animation-template-1(-1, $background-url-6, 800px);
+  }
+
+  .screenshot{
+    &__1, &__2, &__3, &__4, &__5, &__6{
+      animation-duration: 5s;
     }
   }
 

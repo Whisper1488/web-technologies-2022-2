@@ -1,0 +1,75 @@
+$font-sf: 'SF Pro Text', serif;
+$font-inter: 'Inter', serif;
+
+@mixin typography($font: $font-sf, $fw: 500, $fs: 17px, $lh: 18px, $color: black){
+  font-family: $font;
+  font-style: normal;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+}
+
+$background-url-1: url("../img/screenshot1.png");
+$background-url-2: url("../img/screenshot2.png");
+$background-url-3: url("../img/screenshot3.png");
+$background-url-4: url("../img/screenshot4.png");
+$background-url-5: url("../img/screenshot5.png");
+$background-url-6: url("../img/screenshot6.png");
+
+$screenshot-height: 633px;
+
+@mixin screenshot($back-url: $background-url-1){
+  background: $back-url no-repeat center;
+  background-size: cover;
+}
+
+@mixin animation-template-1($direction: 1, $back-url: $background-url-1, $offset: 0){
+  0% {transform: translate(0, 0)}
+  10% {transform: translate(0, $direction * (-200px - $offset))}
+  11%{background: none;}
+  31% {
+    background: none;
+    transform: translate(0, $direction * (1347px + $offset));
+  }
+  32% {
+    @include screenshot($back-url);
+    transform: translate(0, $direction * (1347px + $offset));
+  }
+  100% {transform: translate(0, 0)}
+}
+
+@mixin animation-template-2($direction: 1, $back-url: $background-url-2, $offset: 0){
+  0% {transform: translate(0, 0)}
+  40% {
+    @include screenshot($back-url);
+    transform: translate(0, $direction * (-798px - $offset));
+  }
+  41% {background: none}
+  67% {
+    background: none;
+    transform: translate(0, $direction * (664px + $offset));
+  }
+  68% {
+    @include screenshot($back-url);
+  }
+  100% {transform: translate(0, 0)}
+}
+
+@mixin animation-template-3($direction: 1, $back-url: $background-url-3, $offset: 0){
+  0% {
+    transform: translate(0, 0);
+  }
+  73% {
+    @include screenshot($back-url);
+    transform: translate(0, $direction * (-1457px - $offset));
+  }
+  74% {
+    background: none;
+    transform: translate(0, $direction * (-1457px - $offset));
+  }
+  100% {
+    background: none;
+    transform: translate(0, 0);
+  }
+}

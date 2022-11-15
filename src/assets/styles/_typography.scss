@@ -1,4 +1,4 @@
-@import "typography-mixin";
+@import "mixins";
 
 .title-1-bold{
   @include typography($font: $font-inter, $fw: 700, $fs: 36px, $lh: 52px);

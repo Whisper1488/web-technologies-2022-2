@@ -1,3 +1,5 @@
+@import "mixins";
+
 .screenshots--groups{
   position: absolute;
   right: 0;
@@ -6,6 +8,7 @@
   flex-direction: row;
   z-index: -1;
   transform: rotate(-12deg);
+  overflow: hidden;
 
   &--items{
     display: flex;
@@ -14,7 +17,7 @@
     &--item{
       position: relative;
       width: 292px;
-      height: 633px;
+      height: $screenshot-height;
       margin: 15px;
     }
   }
@@ -22,32 +25,56 @@
 
 .screenshot{
   &__1{
-    background: url("../img/screenshot1.png") no-repeat center;
-    background-size: cover;
+    @include screenshot($background-url-1);
+    animation: screenshots-animation-1 20s linear infinite;
   }
 
   &__2{
-    background: url("../img/screenshot2.png") no-repeat center;
-    background-size: cover;
+    @include screenshot($background-url-2);
+    animation: screenshots-animation-2 20s linear infinite;
   }
 
   &__3{
-    background: url("../img/screenshot3.png") no-repeat center;
-    background-size: cover;
+    @include screenshot($background-url-3);
+    animation: screenshots-animation-3 20s linear infinite;
   }
 
   &__4{
-    background: url("../img/screenshot4.png") no-repeat center;
-    background-size: cover;
+    @include screenshot($background-url-4);
+    animation: screenshots-animation-4 20s linear infinite;
   }
 
   &__5{
-    background: url("../img/screenshot5.png") no-repeat center;
-    background-size: cover;
+    @include screenshot($background-url-5);
+    animation: screenshots-animation-5 20s linear infinite;
   }
 
   &__6{
-    background: url("../img/screenshot6.png") no-repeat center;
-    background-size: cover;
+    @include screenshot($background-url-6);
+    animation: screenshots-animation-6 20s linear infinite;
   }
+}
+
+@keyframes screenshots-animation-1 {
+  @include animation-template-1();
+}
+
+@keyframes screenshots-animation-2 {
+  @include animation-template-2();
+}
+
+@keyframes screenshots-animation-3 {
+  @include animation-template-3();
+}
+
+@keyframes screenshots-animation-4 {
+  @include animation-template-3(-1, $background-url-4);
+}
+
+@keyframes screenshots-animation-5 {
+  @include animation-template-2(-1, $background-url-5);
+}
+
+@keyframes screenshots-animation-6 {
+  @include animation-template-1(-1, $background-url-6);
 }
