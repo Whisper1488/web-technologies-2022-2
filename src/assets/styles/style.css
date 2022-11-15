@@ -856,7 +856,7 @@ footer h1 {
   }
   .screenshot__1, .screenshot__2, .screenshot__3, .screenshot__4, .screenshot__5, .screenshot__6 {
     animation-duration: 7s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: cubic-bezier(1, -0.01, 0, 1);
   }
   /*WELCOME*/
   .welcome {
