@@ -24,7 +24,7 @@
   @include typography($fw: 600, $fs: 14px, $lh: 18px, $color: white);
 }
 
-.title-3-regular{
+.sf-title-3-regular{
   @include typography($fw: 400, $fs: 17px, $lh: 22px);
 }
 
@@ -34,6 +34,10 @@
 
 .sf-title-3-semibold{
   @include typography($fw: 300, $fs: 17px, $lh: 22px);
+}
+
+.sf-title-3-medium{
+  @include typography($fw: 500, $fs: 17px, $lh: 22px);
 }
 
 .sf-title-2-semibold{

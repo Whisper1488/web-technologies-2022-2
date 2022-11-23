@@ -1,0 +1,47 @@
+.dev__industries{
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: #f1f3f7;
+
+  h1{
+    max-width: 600px;
+  }
+
+  &--list{
+    display: flex;
+    flex-direction: row;
+    gap: 220px;
+    margin: 28px 0;
+    max-height: 280px;
+    height: 100%;
+
+    &--group{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      
+      &--item{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        max-height: 44px;
+        height: 100%;
+        align-items: center;
+        white-space: normal;
+
+        &--svg{
+          display: flex;
+          min-height: 44px;
+          min-width: 44px;
+          background: white;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+          border-radius: 100px;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

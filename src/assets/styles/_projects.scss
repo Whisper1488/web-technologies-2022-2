@@ -1,0 +1,35 @@
+.projects{
+  display: flex;
+  flex-direction: column;
+
+  p{
+    margin-top: 24px;
+    max-width: 600px;
+  }
+
+  &--examples{
+
+    &--window{
+
+      &--selector{
+
+        &--button{
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          padding: 11px 24px;
+          max-width: 210px;
+          border: none;
+          white-space: nowrap;
+
+          background: #2D66EE;
+          border-radius: 8px;
+
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

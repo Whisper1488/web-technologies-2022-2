@@ -356,7 +356,7 @@ a {
   color: white;
 }
 
-.title-3-regular {
+.sf-title-3-regular {
   font-family: "SF Pro Text", serif;
   font-style: normal;
   font-weight: 400;
@@ -378,6 +378,15 @@ a {
   font-family: "SF Pro Text", serif;
   font-style: normal;
   font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  color: black;
+}
+
+.sf-title-3-medium {
+  font-family: "SF Pro Text", serif;
+  font-style: normal;
+  font-weight: 500;
   font-size: 17px;
   line-height: 22px;
   color: black;
@@ -679,6 +688,72 @@ footer h1 {
   text-decoration: underline #2D66EE;
 }
 
+.dev__industries {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: #f1f3f7;
+}
+.dev__industries h1 {
+  max-width: 600px;
+}
+.dev__industries--list {
+  display: flex;
+  flex-direction: row;
+  gap: 220px;
+  margin: 28px 0;
+  max-height: 280px;
+  height: 100%;
+}
+.dev__industries--list--group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.dev__industries--list--group--item {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  max-height: 44px;
+  height: 100%;
+  align-items: center;
+  white-space: normal;
+}
+.dev__industries--list--group--item--svg {
+  display: flex;
+  min-height: 44px;
+  min-width: 44px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+.projects p {
+  margin-top: 24px;
+  max-width: 600px;
+}
+.projects--examples--window--selector--button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 11px 24px;
+  max-width: 210px;
+  border: none;
+  white-space: nowrap;
+  background: #2D66EE;
+  border-radius: 8px;
+}
+.projects--examples--window--selector--button:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   /*GENERAL*/
   .container {
@@ -908,7 +983,7 @@ footer h1 {
   .subtitle-2-bold-Inter {
     font-size: 16px;
   }
-  .title-3-regular {
+  .sf-title-3-regular {
     font-size: 14px;
   }
   .sf-title-3-semibold {
