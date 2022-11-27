@@ -1,0 +1,36 @@
+.dev__stages{
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  max-height: 810px;
+  background: white;
+
+  &--list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-content: space-between;
+    max-height: 600px;
+
+    &--item{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #FFFFFF;
+      padding: 24px;
+      max-width: 395px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 0 2px 24px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+
+      &--title{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+      }
+    }
+  }
+}

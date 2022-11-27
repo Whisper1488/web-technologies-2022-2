@@ -1,0 +1,94 @@
+.book{
+  display: flex;
+  flex-direction: row;
+  background: #2D66EE;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  align-items: center;
+  justify-content: space-between;
+
+  &--content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &--image{
+      background: url("../img/book.png") center;
+      background-size: cover;
+      min-height: 520px;
+      min-width: 344px;
+    }
+  }
+
+  &--info{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    gap: 40px;
+
+    .title-1-bold{
+      color: white;
+    }
+
+    &--form{
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+      width: fit-content;
+      background: #FFFFFF;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 0 0 24px rgba(0, 0, 0, 0.16);
+      border-radius: 12px;
+
+      &--email{
+        width: 100%;
+      }
+
+      form{
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        align-items: end;
+      }
+
+      &--inputs{
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+
+        &--input-box{
+          display: flex;
+          flex-direction: column;
+
+          label{
+            color: #667085;
+          }
+
+          &--input{
+            border: none;
+            border-bottom: 1px solid #D0D5DD;
+            background-color: transparent;
+            outline: none;
+          }
+        }
+      }
+
+      input[type="submit"]{
+        white-space: normal;
+        text-align: left;
+      }
+
+      &--button{
+        display: flex;
+        padding: 11px 24px;
+        border: none;
+        background: #2D66EE;
+        border-radius: 8px;
+
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

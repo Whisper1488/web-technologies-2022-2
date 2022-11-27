@@ -48,6 +48,18 @@
   @include typography($fw: 400, $fs: 20px, $lh: 24px);
 }
 
+.sf-text-content{
+  @include typography($fw: 400, $fs: 15px, $lh: 20px);
+}
+
 .blue-text{
   color: #2D66EE;
+}
+
+.gray-text{
+  color: #667085;
+}
+
+.bold-text{
+  font-weight: bold !important;
 }
