@@ -25,6 +25,7 @@ $link-color: #2D66EE;
 .sticky__header{
   position: sticky;
   top: 0;
+  z-index: 25;
 }
 
 %header-components {

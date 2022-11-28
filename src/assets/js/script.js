@@ -30,6 +30,8 @@ class ProjectsPagedSlider {
         selectorElems.forEach(element => element.addEventListener('click', function () {
             selectorElems.forEach(element => element.classList.remove('active'));
             element.classList.add('active');
+            let projectName = document.getElementById('project-name');
+            projectName.innerHTML = element.innerHTML;
         }));
     }
 }
