@@ -97,7 +97,6 @@ function init() {
         }
 
         this.renderParent = function (data) {
-            console.log(data.items.map(elem => this.renderParent(elem)))
             if (data.hasChildren) {
                 return `<div class="list-item list-item_open" data-parent>
                         <div class="list-item__inner">
