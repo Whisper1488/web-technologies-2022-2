@@ -1,88 +1,124 @@
-class Task1 {
-    constructor(array, propName) {
-        console.log(this.pickPropArray(array, propName))
-    }
-
-    pickPropArray(array, propName){
-        let result = []
-        for (const item of array) {
-            if (item.hasOwnProperty(propName)) result.push(item[propName])
-        }
-        return result
-    }
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init)
+} else {
+    init()
 }
 
-class Task2 {
-    createCounter(){
-        let counter = 1
-        return function (){
-            console.log(counter++)
-        }
-    }
-}
-
-class Task3 {
-    constructor(string) {
-        console.log(this.spinWords(string))
-    }
-
-    spinWords(string){
-        let words = string.split(" ")
-        let result = []
-        words.forEach(word => word.length >= 5 ? result.push(word.split('').reverse().join('')) : result.push(word))
-        return result.join(" ")
-    }
-}
-
-class Task4 {
-    constructor(nums, target) {
-        console.log(this.targetSum(nums, target))
-    }
-
-    targetSum(nums, target){
-        for (let i = 0; i < nums.length; i++) {
-            for (let j = 0; j < nums.length; j++) {
-               if (nums[i] + nums[j] === target) return [i, j]
+function init() {
+    const data = {
+        name: 'Каталог товаров',
+        hasChildren: true,
+        items: [
+            {
+                name: 'Мойки',
+                hasChildren: true,
+                items: [
+                    {
+                        name: 'Ulgran1',
+                        hasChildren: true,
+                        items: [
+                            {
+                                name: 'SMT1',
+                                hasChildren: false,
+                                items: []
+                            },
+                            {
+                                name: 'SMT2',
+                                hasChildren: false,
+                                items: []
+                            }
+                        ]
+                    },
+                    {
+                        name: 'Ulgran2',
+                        hasChildren: true,
+                        items: [
+                            {
+                                name: 'SMT3',
+                                hasChildren: false,
+                                items: []
+                            },
+                            {
+                                name: 'SMT4',
+                                hasChildren: false,
+                                items: []
+                            }
+                        ]
+                    }
+                ]
+            },{
+                name: 'Фильтры',
+                hasChildren: true,
+                items: [
+                    {
+                        name: 'Ulgran3',
+                        hasChildren: true,
+                        items: [
+                            {
+                                name: 'SMT5',
+                                hasChildren: false,
+                                items: []
+                            },
+                            {
+                                name: 'SMT6',
+                                hasChildren: false,
+                                items: []
+                            }
+                        ]
+                    }
+                ]
             }
-        }
+        ]
     }
+
+
+    const items = new ListItems(document.getElementById('list-items'), data)
+
+
+    /*  items.render()*/
+    items.init()
+
+    /*console.log(items.renderTest(data));*/
+
+    function ListItems(el, data) {
+        this.el = el;
+        this.data = data;
+
+        this.init = function () {
+            const parents = this.el.querySelectorAll('[data-parent]')
+
+            parents.forEach(parent => {
+                const open = parent.querySelector('[data-open]')
+
+                open.addEventListener('click', () => this.toggleItems(parent) )
+            })
+        }
+
+        this.render = function () {
+            this.el.insertAdjacentHTML('beforeend', this.renderParent(this.data))
+        }
+
+        this.renderParent = function (data) {
+            //проверка всех элементов на hasChildren
+            //если hasChildren, то запускаем renderParent
+            //если !hasChildren, то запускаем renderChildren
+            //возвращает рендер родительского элемента
+
+        }
+
+        this.renderChildren = function (data) {
+            //вовзращает рендер элемента без вложенности
+        }
+
+        this.toggleItems = function (parent) {
+            parent.classList.toggle('list-item_open')
+        }
+
+        /*        this.renderTest = function (data) {
+                    return `
+                    <div class="test">${data.name}</div>
+                    `
+                }*/
+    }
+
 }
-
-/*class Task5 {
-    constructor(strings) {
-        if (strings.length > 0) console.log(this.prefixes(strings))
-    }
-
-    prefixes(strings){
-        let minLen = Number.MAX_VALUE;
-        for (const string of strings) if (string.length < minLen) minLen = string.length
-        for (let i = 0; i < minLen; i++) {
-
-        }
-    }
-}*/
-
-const students = [
-    { name: 'Павел', age: 20 },
-    { name: 'Иван', age: 20 },
-    { name: 'Эдем', age: 20 },
-    { name: 'Денис', age: 20 },
-    { name: 'Виктория', age: 20 },
-    { age: 40 },
-]
-
-new Task1(students, 'name')
-
-const counter1 = new Task2().createCounter()
-counter1() // 1
-counter1() // 2
-
-const counter2 = new Task2().createCounter()
-counter2() // 1
-counter2() // 2
-
-new Task3("Привет от Legacy")
-new Task3("This is a test")
-
-new Task4([2,7,11,15], 9)
-
