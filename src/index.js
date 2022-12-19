@@ -76,28 +76,28 @@ const config = {
     if (this.settings.rowsCount < 10 || this.settings.rowsCount > 30) {
       result.isValid = false;
       result.errors.push(
-        "Неверные настройки, значение rowsCount должно быть в диапазоне [10, 30]."
+          "Неверные настройки, значение rowsCount должно быть в диапазоне [10, 30]."
       );
     }
 
     if (this.settings.colsCount < 10 || this.settings.colsCount > 30) {
       result.isValid = false;
       result.errors.push(
-        "Неверные настройки, значение colsCount должно быть в диапазоне [10, 30]."
+          "Неверные настройки, значение colsCount должно быть в диапазоне [10, 30]."
       );
     }
 
     if (this.settings.speed < 1 || this.settings.speed > 10) {
       result.isValid = false;
       result.errors.push(
-        "Неверные настройки, значение speed должно быть в диапазоне [1, 10]."
+          "Неверные настройки, значение speed должно быть в диапазоне [1, 10]."
       );
     }
 
     if (this.settings.winFoodCount < 5 || this.settings.winFoodCount > 50) {
       result.isValid = false;
       result.errors.push(
-        "Неверные настройки, значение winLength должно быть в диапазоне [5, 50]."
+          "Неверные настройки, значение winLength должно быть в диапазоне [5, 50]."
       );
     }
 
@@ -232,14 +232,22 @@ const snake = {
    */
   isOnPoint(point) {
     return this.body.some(
-      (snakePoint) => snakePoint.x === point.x && snakePoint.y === point.y
-    );
+        (snakePoint) => snakePoint.x === point.x && snakePoint.y === point.y);
   },
 
   /**
    * Двигает змейку на один шаг.
    */
-  makeStep() {},
+  makeStep() {
+    let nextHeadStep = this.getNextStepHeadPoint();
+    for (let i = 0; i < this.body.length; i++) {
+      let nextStep = {x: this.body[i].x, y: this.body[i].y};
+      this.body[i].x = nextHeadStep.x;
+      this.body[i].y = nextHeadStep.y;
+      nextHeadStep = {x: nextStep.x, y: nextStep.y};
+    }
+    this.lastStepDirection = this.direction;
+  },
 
   /**
    * Добавляет в конец тела змейки копию последнего элемента змейки.
@@ -331,7 +339,9 @@ const food = {
    * @param {{x: int, y: int}} point Точка, для проверки соответствия точке еды.
    * @returns {boolean} true, если точки совпали, иначе false.
    */
-  isOnPoint(point) {},
+  isOnPoint(point) {
+    return point.x == this.x && point.y == this.y
+  },
 };
 
 /**
@@ -443,8 +453,8 @@ const game = {
     // Ставим интервал шагов змейки.
     console.log(this.config.settings.speed);
     this.tickInterval = setInterval(
-      () => this.tickHandler(),
-      1000 / this.config.getSpeed()
+        () => this.tickHandler(),
+        1000 / this.config.getSpeed()
     );
     // Меняем название кнопки в меню на "Стоп" и делаем ее активной.
     this.setPlayButton("Стоп");
@@ -513,8 +523,8 @@ const game = {
     playButton.textContent = textContent;
     // Если необходимо запретить нажатие кнопку - ставим класс disabled, иначе убираем класс disabled.
     isDisabled
-      ? playButton.classList.add("disabled")
-      : playButton.classList.remove("disabled");
+        ? playButton.classList.add("disabled")
+        : playButton.classList.remove("disabled");
   },
 
   /**
@@ -536,12 +546,12 @@ const game = {
   setEventHandlers() {
     // При клике на кнопку с классом playButton вызвать функцию this.playClickHandler.
     document
-      .getElementById("playButton")
-      .addEventListener("click", () => this.playClickHandler());
+        .getElementById("playButton")
+        .addEventListener("click", () => this.playClickHandler());
     // При клике на кнопку с классом newGameButton вызвать функцию this.newGameClickHandler.
     document
-      .getElementById("newGameButton")
-      .addEventListener("click", (event) => this.newGameClickHandler(event));
+        .getElementById("newGameButton")
+        .addEventListener("click", (event) => this.newGameClickHandler(event));
     // При нажатии кнопки, если статус игры "играем", то вызываем функцию смены направления у змейки.
     document.addEventListener("keydown", (event) => this.keyDownHandler(event));
   },
@@ -557,7 +567,19 @@ const game = {
    * Отдает случайную не занятую точку на карте.
    * @return {{x: int, y: int}} Точку с координатами.
    */
-  getRandomFreeCoordinates() {},
+  getRandomFreeCoordinates() {
+    let x = this.getRandomInt(this.config.getColsCount())
+    let y = this.getRandomInt(this.config.getRowsCount())
+    if (this.map.usedCells.some(cell => cell.x === x && cell.y === y)){
+      this.getRandomFreeCoordinates()
+    } else {
+      return {x, y}
+    }
+  },
+
+  getRandomInt(max){
+    return Math.floor(Math.random() * max)
+  },
 
   /**
    * Обработчик события нажатия на кнопку playButton.
@@ -625,19 +647,44 @@ const game = {
    * @param {string} direction Направление, которое проверяем.
    * @returns {boolean} true, если направление можно назначить змейке, иначе false.
    */
-  canSetDirection(direction) {},
+  canSetDirection(direction) {
+    let lastStep = this.snake.getLastStepDirection()
+    console.log(lastStep);
+    switch (lastStep){
+      case "up":
+        if (direction != "down") return true;
+        break;
+      case "down":
+        if (direction != "up") return true;
+        break;
+      case "right":
+        if (direction != "left") return true;
+        break;
+      case "left":
+        if (direction != "right") return true;
+        break;
+      default:
+        return false;
+    }
+  },
 
   /**
    * Проверяем произошла ли победа, судим по очкам игрока (длине змейки).
    * @returns {boolean} true, если игрок выиграл игру, иначе false.
    */
-  isGameWon() {},
+  isGameWon() {
+    /*console.log(this.winFoodCount === this.snake.body.length())*/
+    return this.config.getWinFoodCount() == this.snake.body.length
+  },
 
   /**
    * Проверяет возможен ли следующий шаг.
    * @returns {boolean} true если следующий шаг змейки возможен, false если шаг не может быть совершен.
    */
-  canMakeStep() {},
+  canMakeStep() {
+    let nextStep = this.snake.getNextStepHeadPoint();
+    return !this.snake.body.some(cell => cell.x == nextStep.x && cell.y == nextStep.y);
+  },
 };
 
 // При загрузке страницы инициализируем игру.
