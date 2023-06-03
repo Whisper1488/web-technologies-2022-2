@@ -65,6 +65,7 @@ class Pizza extends PizzaObject {
             if (topping === this._toppings[i]){
                 found = true
                 this._toppings.splice(i, 1);
+                break
             }
         }
         if (!found){
