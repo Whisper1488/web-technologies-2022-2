@@ -44,18 +44,6 @@ class Pizza extends PizzaObject {
     }
 
     addTopping(topping) {
-        switch (this.size.name) {
-            case "Маленькая":
-                topping._calories = topping.smallCalories
-                topping._price = topping.smallPrice
-                break
-            case "Большая":
-                topping._calories = topping.bigCalories
-                topping._price = topping.bigPrice
-                break
-            default:
-                console.log('Неизвестный размер');
-        }
         this._toppings.push(topping)
     }
 
@@ -99,10 +87,26 @@ class Pizza extends PizzaObject {
     }
 
     calculatePrice(){
-        let calories = 0;
-        calories += this.size._price + this.stuffing._price
-        this._toppings.forEach(x => calories += x._price)
-        return calories
+        switch (this.size.name) {
+            case "Маленькая":
+                for (let i = 0; i < this._toppings.length; i++) {
+                    this._toppings[i]._calories = this._toppings[i].smallCalories
+                    this._toppings[i]._price = this._toppings[i].smallPrice
+                }
+                break
+            case "Большая":
+                for (let i = 0; i < this._toppings.length; i++) {
+                    this._toppings[i]._calories = this._toppings[i].bigCalories
+                    this._toppings[i]._price = this._toppings[i].bigPrice
+                }
+                break
+            default:
+                console.log('Неизвестный размер');
+        }
+        let price = 0;
+        price += this.size._price + this.stuffing._price
+        this._toppings.forEach(x => price += x._price)
+        return price
     }
 }
 
