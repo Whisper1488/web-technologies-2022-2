@@ -150,10 +150,13 @@ function getPizzaType(){
 function setPizzaType(type){
     let pizzas = Array.from(document.getElementsByClassName('pizza-type-option'))
     for (const pizza of pizzas) {
-        if (pizza.id === type && !pizza.classList.contains('selected')){
-            pizza.classList.add('selected')
-        }else if (pizza.classList.contains('selected')){
+        if (pizza.classList.contains('selected')){
             pizza.classList.remove('selected')
+        }
+    }
+    for (const pizza of pizzas) {
+        if (pizza.id === type){
+            pizza.classList.add('selected')
         }
     }
     changePizza()
