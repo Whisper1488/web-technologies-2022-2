@@ -10,7 +10,6 @@ class PizzaObject {
 class PizzaType extends PizzaObject {
     constructor(name, price, calories) {
         super(name, price, calories);
-
     }
 }
 
@@ -24,23 +23,24 @@ class Size extends PizzaObject {
 
 class Topping extends PizzaObject {
 
-    constructor(name, smallPrice, bigPrice, smallCalories, bigCalories) {
+    constructor(name, smallPrice, bigPrice, smallCalories, bigCalories, counterId) {
         super(name, null, null);
         this.smallPrice = smallPrice
         this.bigPrice = bigPrice
         this.smallCalories = smallCalories
         this.bigCalories = bigCalories
+        this.counterId = counterId
     }
 
 }
 
 class Pizza extends PizzaObject {
 
-    constructor(type, size) {
+    constructor(type, size, toppings) {
         super(type.name + ' ' + size.name, null, null);
         this.size = size
         this.stuffing = type
-        this._toppings = []
+        this._toppings = toppings
     }
 
     addTopping(topping) {
@@ -72,11 +72,15 @@ class Pizza extends PizzaObject {
         }
     }
 
-    getToppings(){
+    getToppingNames(){
         let toppingNames = "";
         this._toppings.forEach(x => toppingNames += x.name + ", ")
         toppingNames = toppingNames.slice(0, -2)
         return toppingNames;
+    }
+
+    getToppings(){
+        return this._toppings
     }
 
     getSize(){
@@ -102,25 +106,100 @@ class Pizza extends PizzaObject {
     }
 }
 
-let margarita = new PizzaType("Маргарита", 500, 300)
-let pepperoni = new PizzaType("Пепперони", 800, 400)
-let bavarian = new PizzaType("Баварская", 700, 450)
+const margarita = new PizzaType("Маргарита", 500, 300)
+const pepperoni = new PizzaType("Пепперони", 800, 400)
+const bavarian = new PizzaType("Баварская", 700, 450)
 
-let big = new Size("Большая", 200, 200)
-let small = new Size("Маленькая", 100, 100)
+const big = new Size("Большая", 200, 200)
+const small = new Size("Маленькая", 100, 100)
 
-let mozzarella = new Topping("Моцарелла", 50, 100, 0, 0)
-let cheeseBoard = new Topping("Сырный борт", 150, 300, 50, 50)
-let cheddarAndParmesan = new Topping("Чеддер и пармезан", 150, 300, 50, 50)
+const mozzarella = new Topping("Моцарелла", 50, 100, 0, 0, 'mozzarellaCount')
+const cheeseBoard = new Topping("Сырный борт", 150, 300, 50, 50, 'cheeseBoardCount')
+const cheddarAndParmesan = new Topping("Чеддер и пармезан", 150, 300, 50, 50, 'cheddarAndParmesanCount')
 
-let pizzaOrder = new Pizza(pepperoni, big)
-pizzaOrder.addTopping(cheeseBoard)
-pizzaOrder.addTopping(mozzarella)
-pizzaOrder.removeTopping(mozzarella)
-pizzaOrder.removeTopping(cheddarAndParmesan)
-console.log(pizzaOrder.name)
-console.log(pizzaOrder.getStuffing())
-console.log(pizzaOrder.getSize())
-console.log(pizzaOrder.getToppings())
-console.log(pizzaOrder.calculateCalories())
-console.log(pizzaOrder.calculatePrice())
+let pizzaOrder = new Pizza(pepperoni, small, [])
+
+const pizzaPrice = document.querySelector('#pizzaPrice')
+
+function getPizzaSize(){
+    let bigOption = document.querySelector('#big')
+    if (bigOption.classList.contains('selected')){
+        return big
+    }
+    return small
+}
+
+function getPizzaType(){
+    let pepperoniOption = document.querySelector('#pepperoni')
+    let margaritaOption = document.querySelector('#margarita')
+
+    if (pepperoniOption.classList.contains('selected')){
+        return pepperoni
+    } else if (margaritaOption.classList.contains('selected')){
+        return margarita
+    } else {
+        return bavarian
+    }
+}
+
+function setPizzaType(type){
+    let pizzas = Array.from(document.getElementsByClassName('pizza-type-option'))
+    for (const pizza of pizzas) {
+        if (pizza.id === type && !pizza.classList.contains('selected')){
+            pizza.classList.add('selected')
+        }else if (pizza.classList.contains('selected')){
+            pizza.classList.remove('selected')
+        }
+    }
+    changePizza()
+}
+
+function setPizzaSize(size){
+    let bigSize = document.querySelector('#big')
+    let smallSize = document.querySelector('#small')
+    if (size === big){
+        if (!bigSize.classList.contains('selected')){
+            bigSize.classList.add('selected')
+            smallSize.classList.remove('selected')
+        }
+    } else {
+        if (!smallSize.classList.contains('selected')){
+            smallSize.classList.add('selected')
+            bigSize.classList.remove('selected')
+        }
+    }
+    changePizza()
+}
+
+function addTopping(topping){
+    pizzaOrder.addTopping(topping)
+    let counter = document.querySelector('#'+topping.counterId)
+    counter.innerHTML = countTopping(topping).toString()
+    pizzaPrice.innerHTML = pizzaOrder.calculatePrice()
+}
+
+function removeTopping(topping){
+    pizzaOrder.removeTopping(topping)
+    let counter = document.querySelector('#'+topping.counterId)
+    counter.innerHTML = countTopping(topping).toString()
+    pizzaPrice.innerHTML = pizzaOrder.calculatePrice()
+}
+
+function countTopping(topping){
+    let allTopings = pizzaOrder.getToppings()
+    let count = 0
+    for (let currentTopping of allTopings) {
+        if (currentTopping === topping) count++
+    }
+    return count
+}
+
+function changePizza() {
+    let size = getPizzaSize()
+    let pizzaType = getPizzaType()
+    let toppings = pizzaOrder.getToppings();
+    pizzaOrder = new Pizza(pizzaType, size, toppings)
+    pizzaPrice.innerHTML = pizzaOrder.calculatePrice()
+}
+
+changePizza()

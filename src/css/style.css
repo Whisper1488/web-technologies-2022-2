@@ -1,0 +1,156 @@
+.pizza{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f2f7;
+}
+
+.selected{
+    background-color: #d2cbcb;
+}
+
+.pizza-additions-controls{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    align-items: center;
+}
+
+.pizza-additions-controls-add{
+    margin-left: 5px;
+    border-radius: 50px;
+    background-color: rgba(146,249,130,0.6);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.pizza-additions-controls-remove{
+    margin-right: 5px;
+    border-radius: 50px;
+    background-color: rgba(249,90,104,0.6);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.pizza-type{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 50px;
+}
+
+.pizza-settings{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.pizza-size{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pizza-size-select{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #ede6e6;
+}
+
+.pizza-size-select-big{
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.pizza-size-select-small{
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.pizza-additions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pizza-additions-select{
+    display: flex;
+    flex-direction: row;
+}
+
+.pizza-type-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.pizza-additions-select-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.pizza-type-pepperoni-photo{
+    background: url("../img/Pepperoni.jpg") no-repeat center;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.pizza-type-margarita-photo{
+    background: url("../img/Margarita.jpg") no-repeat center;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.pizza-type-bavarian-photo{
+    background: url("../img/Bavarian.jpg") no-repeat center;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.pizza-additions-select-cheddarAndParmesan-photo{
+    background: url("../img/cheddarAndParmesan.jpg") no-repeat center;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    background-size: cover;
+}
+.pizza-additions-select-cheeseBoard-photo{
+    background: url("../img/cheeseBoard.jpg") no-repeat center;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.pizza-additions-select-mozzarella-photo{
+    background: url("../img/Mozzarella.jpg") no-repeat center;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.pizza-price{
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 35px;
+}
