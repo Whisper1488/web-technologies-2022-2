@@ -125,6 +125,7 @@ const cheddarAndParmesan = new Topping("Чеддер и пармезан", 150, 
 let pizzaOrder = new Pizza(pepperoni, small, [])
 
 const pizzaPrice = document.querySelector('#pizzaPrice')
+const pizzaCalories = document.querySelector('#pizzaCalories')
 
 function getPizzaSize(){
     let bigOption = document.querySelector('#big')
@@ -183,14 +184,14 @@ function addTopping(topping){
     pizzaOrder.addTopping(topping)
     let counter = document.querySelector('#'+topping.counterId)
     counter.innerHTML = countTopping(topping).toString()
-    pizzaPrice.innerHTML = pizzaOrder.calculatePrice()
+    changePizza()
 }
 
 function removeTopping(topping){
     pizzaOrder.removeTopping(topping)
     let counter = document.querySelector('#'+topping.counterId)
     counter.innerHTML = countTopping(topping).toString()
-    pizzaPrice.innerHTML = pizzaOrder.calculatePrice()
+    changePizza()
 }
 
 function countTopping(topping){
@@ -208,6 +209,7 @@ function changePizza() {
     let toppings = pizzaOrder.getToppings();
     pizzaOrder = new Pizza(pizzaType, size, toppings)
     pizzaPrice.innerHTML = pizzaOrder.calculatePrice()
+    pizzaCalories.innerHTML = pizzaOrder.calculateCalories()
 }
 
 changePizza()
